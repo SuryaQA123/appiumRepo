@@ -1,0 +1,541 @@
+{
+	"info": {
+		"_postman_id": "99e38609-57ab-4381-8b04-8b9bbca57fd3",
+		"name": "MyPeople Mobile",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1358393"
+	},
+	"item": [
+		{
+			"name": "Mobile",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "jsonInput",
+									"value": "{\"firstName\": \"Nagendra\",\"lastName\": \"Palepu\",\"mobileNo\":\"9550555564\",\"fcmId\": \"test123wedrftgjk232\",\"languageType\": \"english\",\"countryCode\":\"+91\", \"platformType\":\"Android\"}",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/CAF-NAGENDRAP-AND/Desktop/Content/86294955.webp"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://34.218.194.74:8080/MP_Mobile_API/register",
+							"protocol": "http",
+							"host": [
+								"34",
+								"218",
+								"194",
+								"74"
+							],
+							"port": "8080",
+							"path": [
+								"MP_Mobile_API",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MobileLogin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjM0NTY3ODkiLCJleHAiOjE2OTAzNzgyODEsImlhdCI6MTY5MDM2MDI4MX0.G4PJRwxL_JlKTpUEXaNJJegh6orCPznW5gOjBzxXiqOV65G349NJGh8-UWKUsfMYI72bQrC0GzW2Xe7JPzhlSA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mobileNo\":\"9550555564\",\r\n    \"countryCode\":\"+91\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://34.218.194.74:8080/mp_jwt_server/MP_Mobile_API/login",
+							"protocol": "http",
+							"host": [
+								"34",
+								"218",
+								"194",
+								"74"
+							],
+							"port": "8080",
+							"path": [
+								"mp_jwt_server",
+								"MP_Mobile_API",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "OTP Verification",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjM0NTY3ODkiLCJleHAiOjE2OTAzNzgyODEsImlhdCI6MTY5MDM2MDI4MX0.G4PJRwxL_JlKTpUEXaNJJegh6orCPznW5gOjBzxXiqOV65G349NJGh8-UWKUsfMYI72bQrC0GzW2Xe7JPzhlSA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mobileNo\":\"9550555564\",\r\n    \"countryCode\":\"+91\",\r\n    \"otp\":\"1234\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://34.218.194.74:8080/mp_jwt_server/MP_Mobile_API/verificationOTP",
+							"protocol": "http",
+							"host": [
+								"34",
+								"218",
+								"194",
+								"74"
+							],
+							"port": "8080",
+							"path": [
+								"mp_jwt_server",
+								"MP_Mobile_API",
+								"verificationOTP"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Resend OTP",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjM0NTY3ODkiLCJleHAiOjE2OTAzNzgyODEsImlhdCI6MTY5MDM2MDI4MX0.G4PJRwxL_JlKTpUEXaNJJegh6orCPznW5gOjBzxXiqOV65G349NJGh8-UWKUsfMYI72bQrC0GzW2Xe7JPzhlSA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mobileNo\":\"9550555561\",\r\n     \"countryCode\":\"+91\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://34.218.194.74:8080/mp_jwt_server/MP_Mobile_API/resendOTP",
+							"protocol": "http",
+							"host": [
+								"34",
+								"218",
+								"194",
+								"74"
+							],
+							"port": "8080",
+							"path": [
+								"mp_jwt_server",
+								"MP_Mobile_API",
+								"resendOTP"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Content Wall",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiI5ODY2NTIzNzU1IiwiZXhwIjoxNjkwNTQ3NDkxLCJpYXQiOjE2OTA1Mjk0OTF9.Ocv0iA52SP-k5VL57GT1mHPg5KDNQH3KMYVgMgx8nyP4ap42AJLE5DR_1N9tEn2RWN2oeuw_QlDLhhVFJ-ba3w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://34.218.194.74:8080/mp_jwt_server/MP_Mobile_API/getContentWall",
+							"protocol": "http",
+							"host": [
+								"34",
+								"218",
+								"194",
+								"74"
+							],
+							"port": "8080",
+							"path": [
+								"mp_jwt_server",
+								"MP_Mobile_API",
+								"getContentWall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Analytics For Social Media Shares",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjM0NTY3ODkiLCJleHAiOjE2OTAzNzgyODEsImlhdCI6MTY5MDM2MDI4MX0.G4PJRwxL_JlKTpUEXaNJJegh6orCPznW5gOjBzxXiqOV65G349NJGh8-UWKUsfMYI72bQrC0GzW2Xe7JPzhlSA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mpLeaderid\":\"1\",\r\n    \"mpVolunteerId\":\"0\",\r\n    \"mpVoterId\":\"0\",\r\n    \"mpCampaignId\":\"0\",\r\n    \"mpContenPushId\":\"0\",\r\n    \"mpUserId\":\"0\",\r\n    \"mediaType\":\"whatsapp\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://34.218.194.74:8080/mp_jwt_server/MP_Mobile_API/analyticsForSocialMediaShares",
+							"protocol": "http",
+							"host": [
+								"34",
+								"218",
+								"194",
+								"74"
+							],
+							"port": "8080",
+							"path": [
+								"mp_jwt_server",
+								"MP_Mobile_API",
+								"analyticsForSocialMediaShares"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Language",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjM0NTY3ODkiLCJleHAiOjE2OTAzNzgyODEsImlhdCI6MTY5MDM2MDI4MX0.G4PJRwxL_JlKTpUEXaNJJegh6orCPznW5gOjBzxXiqOV65G349NJGh8-UWKUsfMYI72bQrC0GzW2Xe7JPzhlSA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mpUserId\":\"6\",\r\n    \"languageType\":\"telugu\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://34.218.194.74:8080/mp_jwt_server/MP_Mobile_API/changeLanguageByUserId",
+							"protocol": "http",
+							"host": [
+								"34",
+								"218",
+								"194",
+								"74"
+							],
+							"port": "8080",
+							"path": [
+								"mp_jwt_server",
+								"MP_Mobile_API",
+								"changeLanguageByUserId"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjM0NTY3ODkiLCJleHAiOjE2OTAzNzgyODEsImlhdCI6MTY5MDM2MDI4MX0.G4PJRwxL_JlKTpUEXaNJJegh6orCPznW5gOjBzxXiqOV65G349NJGh8-UWKUsfMYI72bQrC0GzW2Xe7JPzhlSA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "jsonInput",
+									"value": "{\"mpUserId\": \"6\",\"firstName\": \"Nagendra\",\"lastName\": \"P\",\"mobileNo\": \"95505555561\",\"fcmId\": \"test123232\",\"languageType\": \"english\",\"countryCode\":\"+91\"}",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/CAF-NAGENDRAP-AND/Pictures/Screenshots/Screenshot 2023-07-06 120927.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://34.218.194.74:8080/mp_jwt_server/MP_Mobile_API/updateUserProfile",
+							"protocol": "http",
+							"host": [
+								"34",
+								"218",
+								"194",
+								"74"
+							],
+							"port": "8080",
+							"path": [
+								"mp_jwt_server",
+								"MP_Mobile_API",
+								"updateUserProfile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users Data By ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjM0NTY3ODkiLCJleHAiOjE2OTAzNzgyODEsImlhdCI6MTY5MDM2MDI4MX0.G4PJRwxL_JlKTpUEXaNJJegh6orCPznW5gOjBzxXiqOV65G349NJGh8-UWKUsfMYI72bQrC0GzW2Xe7JPzhlSA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://34.218.194.74:8080/mp_jwt_server/MP_Mobile_API/getUsersDataByID?userId=6",
+							"protocol": "http",
+							"host": [
+								"34",
+								"218",
+								"194",
+								"74"
+							],
+							"port": "8080",
+							"path": [
+								"mp_jwt_server",
+								"MP_Mobile_API",
+								"getUsersDataByID"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Contact Us",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjM0NTY3ODkiLCJleHAiOjE2OTAzNzgyODEsImlhdCI6MTY5MDM2MDI4MX0.G4PJRwxL_JlKTpUEXaNJJegh6orCPznW5gOjBzxXiqOV65G349NJGh8-UWKUsfMYI72bQrC0GzW2Xe7JPzhlSA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"About Your App\",\r\n    \"message\":\"i want know your application, how can i contact you?\",\r\n    \"mobileNo\":\"9550555564\",\r\n    \"emailId\":\"nagi32567@gmail.com\",\r\n    \"userId\":\"9\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://34.218.194.74:8080/mp_jwt_server/MP_Mobile_API/saveContactUs",
+							"protocol": "http",
+							"host": [
+								"34",
+								"218",
+								"194",
+								"74"
+							],
+							"port": "8080",
+							"path": [
+								"mp_jwt_server",
+								"MP_Mobile_API",
+								"saveContactUs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Contact Us Data by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMjM0NTY3ODkiLCJleHAiOjE2OTAzNzgyODEsImlhdCI6MTY5MDM2MDI4MX0.G4PJRwxL_JlKTpUEXaNJJegh6orCPznW5gOjBzxXiqOV65G349NJGh8-UWKUsfMYI72bQrC0GzW2Xe7JPzhlSA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mpContactUsId\": \"2\",\r\n    \"title\": \"About Your App\",\r\n    \"message\": \"I want know your application, how can i contact you?\",\r\n    \"mobileNo\": \"9550555560\",\r\n    \"emailId\": \"nagendra.palepu@gmail.com\",\r\n    \"userId\": \"4\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://34.218.194.74:8080/mp_jwt_server/MP_Mobile_API/updateContactUsDatabyID",
+							"protocol": "http",
+							"host": [
+								"34",
+								"218",
+								"194",
+								"74"
+							],
+							"port": "8080",
+							"path": [
+								"mp_jwt_server",
+								"MP_Mobile_API",
+								"updateContactUsDatabyID"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create JWT Token",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://34.218.194.74:8080/mp_jwt_server/createJWTToken?mobileNo=9550555564",
+							"protocol": "http",
+							"host": [
+								"34",
+								"218",
+								"194",
+								"74"
+							],
+							"port": "8080",
+							"path": [
+								"mp_jwt_server",
+								"createJWTToken"
+							],
+							"query": [
+								{
+									"key": "mobileNo",
+									"value": "9550555564"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create JWT Token",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://34.218.194.74:8080/mp_jwt_server/createJWTToken?mobileNo=9866523755",
+							"protocol": "http",
+							"host": [
+								"34",
+								"218",
+								"194",
+								"74"
+							],
+							"port": "8080",
+							"path": [
+								"mp_jwt_server",
+								"createJWTToken"
+							],
+							"query": [
+								{
+									"key": "mobileNo",
+									"value": "9866523755"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
